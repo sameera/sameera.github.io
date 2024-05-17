@@ -3,7 +3,7 @@
 ---
 
 <!-- About lightbox-->
-<div class="lightbox-wrapper" id="about" data-simplebar>
+<div class="lightbox-wrapper" id="about">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -52,12 +52,11 @@
                                         </p>
                                         <p>
                                             My strengths in leadership,
-                                            innovation and Product-Led Growth
-                                            strategies enabled me to be
-                                            cherry-picked to lead audacious
-                                            initiatives that pushed the
-                                            boundaries of each of the businesses
-                                            I've been part of.
+                                            innovation, and Product-Led Growth
+                                            strategies have consistently made me
+                                            the chosen leader for initiatives
+                                            that pushed the boundaries of each
+                                            of the businesses I’ve been part of.
                                         </p>
                                     </div>
                                     <div class="content-info">
@@ -142,8 +141,7 @@
                             <div class="col-12">
                                 <div class="section-heading">
                                     <p class="section-description">
-                                        My building blocks for building team
-                                        culture
+                                        My building blocks for team culture
                                     </p>
                                     <h2 class="section-title">
                                         Foundational Values
@@ -468,9 +466,52 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="section-heading">
+                                    <p class="section-description">
+                                        Read more Endorsements on <a
+                                            href="https://www.linkedin.com/in/perera-sameera/details/recommendations/?detailScreenTabIndex=0"
+                                            >LinkedIn</a
+                                        >.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    window.addEventListener("resize", function () {
+        // All Values
+        makeSameHeight(document.querySelectorAll(".single-service"));
+        // All Endorsements
+        makeSameHeight(document.querySelectorAll(".single-review"));
+    });
+
+    function makeSameHeight(targetDivs) {
+        // Reset the height of all divs to 'auto' before calculating the tallest height
+        targetDivs.forEach((div) => {
+            div.style.height = "auto";
+        });
+
+        // Get the tallest height among all divs
+        let maxHeight = 0;
+        targetDivs.forEach((div) => {
+            const height = div.offsetHeight; // Get the height of the div
+            maxHeight = Math.max(maxHeight, height);
+        });
+
+        // Set the height of all divs to be equal to the tallest one
+        targetDivs.forEach((div) => {
+            div.style.height = maxHeight + "px";
+        });
+    }
+
+    // Trigger the resize event initially to set the heights correctly on page load
+    window.dispatchEvent(new Event("resize"));
+</script>

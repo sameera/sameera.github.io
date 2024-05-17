@@ -1,5 +1,7 @@
 ---
 import NavBar from "../components/NavBar.astro";
+
+const { page } = Astro.props;
 ---
 
 <!doctype html>
@@ -44,10 +46,8 @@ import NavBar from "../components/NavBar.astro";
         <!-- CSS vendors-->
         <link rel="stylesheet" href="/css/bootstrap-custom.css" />
         <link rel="stylesheet" href="/css/ionicons.min.css" />
-        <link rel="stylesheet" href="/css/tiny-slider.css" />
-        <link rel="stylesheet" href="/css/lity.min.css" />
-        <link rel="stylesheet" href="/css/simplebar.min.css" />
-        <link rel="stylesheet" href="/css/jquery.mb.YTPlayer.min.css" />
+        <link rel="stylesheet" href="css/simplebar.min.css" />
+
         <!-- Main CSS-->
         <link rel="stylesheet" href="/css/main.css" />
         <!-- CSS Color scheme-->
@@ -60,7 +60,7 @@ import NavBar from "../components/NavBar.astro";
         <link rel="stylesheet" href="/css/custom.css" />
     </head>
 
-    <body class="theme-dark">
+    <body class="theme-dark" style="overflow-y: auto !important">
         <!-- Preloader-->
         <div class="preloader">
             <div class="preloader-block">
@@ -72,23 +72,18 @@ import NavBar from "../components/NavBar.astro";
             </div>
         </div>
         <div id="overlay-effect"></div>
-        <NavBar />
+        <NavBar page={page} />
 
         <slot />
 
         <!-- Scripts-->
         <script is:inline src="/js/jquery.min.js"></script>
         <script is:inline src="/js/bootstrap.bundle.min.js"></script>
-        <script is:inline src="/js/imagesloaded.pkgd.min.js"></script>
-        <script is:inline src="/js/isotope.pkgd.min.js"></script>
-        <script is:inline src="/js/animatedModal.js"></script>
-        <script is:inline src="/js/tiny-slider.js"></script>
-        <script is:inline src="/js/lity.min.js"></script>
-        <script is:inline src="/js/simplebar.min.js"></script>
-        <script is:inline src="/js/jquery.mb.YTPlayer.min.js"></script>
+
         <script src="../js/main.js"></script>
         <!-- Custom JS (Add your custom JS scripts to this file)-->
         <script src="../js/custom.js"></script>
+
         <!-- Google tag (gtag.js) -->
         <script
             is:inline

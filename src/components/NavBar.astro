@@ -1,0 +1,45 @@
+---
+const { page } = Astro.props;
+
+function getNavLinkClasses(pageName: string) {
+    console.log(page);
+    return pageName === page ? "nav-link nav-current" : "nav-link";
+}
+---
+
+<!-- Navbar-->
+<nav class="navbar-expand-md navbar fixed-top" id="navbar">
+    <a class="navbar-brand" data-scroll="" href="/">
+        <!-- Navbar Logo-->
+        <img class="img-fluid" src="img/img-sp-logo.png" alt="Logo" /></a
+    >
+    <span
+        class="navbar-menu ml-auto"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        role="button"><span class="btn-line"></span></span
+    >
+    <div
+        class="collapse navbar-collapse order-1 order-lg-0"
+        id="navbarSupportedContent"
+    >
+        <!-- Navbar menu-->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class={getNavLinkClasses("home")} href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class={getNavLinkClasses("about")} href="about-me">About</a>
+            </li>
+            <!--
+          <li class="nav-item">
+            <a class="nav-link" href="#resume">Resume</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+        -->
+        </ul>
+    </div>
+</nav>

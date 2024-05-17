@@ -9,12 +9,21 @@
 
 /*----------- CUSTOM JS SCRIPTS -----------*/
 
-(function($) {
-  'use strict';
-  $(function() {
-    // Code here executes When the DOM is loaded...
-  });
-  $(window).on('load', function() {
-    // Code here executes When the page is loaded
-  });
+(function ($) {
+    'use strict';
+    $(function () {
+        // Code here executes When the DOM is loaded...
+    });
+    $(window).on('load', function () {
+        // Code here executes When the page is loaded
+    });
 }(jQuery));
+
+document.addEventListener('scroll', function () {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 0) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});

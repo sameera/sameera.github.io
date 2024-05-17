@@ -438,7 +438,8 @@ hr {
 
 .lightbox-wrapper {
     background-color: #101010;
-    position: fixed;
+    margin-top: 120px;
+    width: 100%;
 }
 
 .lightbox-wrapper .lightbox-close {
@@ -446,90 +447,6 @@ hr {
     right: 4vw;
     top: 35px;
     z-index: 99;
-}
-
-.lightbox-wrapper .lightbox-close .close-btn {
-    -ms-flex-direction: column;
-    -ms-flex-pack: justify;
-    -ms-flex-pack: center;
-    cursor: pointer;
-    display: -ms-flexbox;
-    display: flex;
-    flex-direction: column;
-    height: 19px;
-    justify-content: space-between;
-    justify-content: center;
-    position: relative;
-    width: 30px;
-}
-
-.lightbox-wrapper .lightbox-close .close-btn .btn-line,
-.lightbox-wrapper .lightbox-close .close-btn:before,
-.lightbox-wrapper .lightbox-close .close-btn:after {
-    -ms-flex-item-align: end;
-    align-self: flex-end;
-    background-color: gray;
-    height: 3px;
-    width: 100%;
-}
-
-.lightbox-wrapper .lightbox-close .close-btn:before {
-    content: '';
-    width: 85%;
-}
-
-.lightbox-wrapper .lightbox-close .close-btn:after {
-    content: '';
-}
-
-.lightbox-wrapper .lightbox-close .close-btn .btn-line {
-    width: 55%;
-}
-
-.lightbox-wrapper .lightbox-close .close-btn .btn-line,
-.lightbox-wrapper .lightbox-close .close-btn:before,
-.lightbox-wrapper .lightbox-close .close-btn:after {
-    background-color: #fff;
-    position: absolute;
-    width: 100%;
-}
-
-.lightbox-wrapper .lightbox-close .close-btn .btn-line {
-    display: none;
-}
-
-.lightbox-wrapper .lightbox-close .close-btn:before {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-.lightbox-wrapper .lightbox-close .close-btn:after {
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-}
-
-.lightbox-wrapper .lightbox-close .close-btn .btn-line,
-.lightbox-wrapper .lightbox-close .close-btn:before,
-.lightbox-wrapper .lightbox-close .close-btn:after {
-    background-color: #fff;
-    height: 2px;
-}
-
-.lightbox-wrapper .simplebar-track.simplebar-vertical {
-    width: 13px;
-}
-
-.lightbox-wrapper .simplebar-track.simplebar-vertical .simplebar-scrollbar {
-    right: 1px;
-    width: 9px;
-}
-
-.lightbox-wrapper .simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
-    background: #3c3c3c;
-}
-
-.lightbox-wrapper .lightbox-content {
-    margin: 70px 0;
 }
 
 .lightbox-wrapper .lightbox-content .single-section:not(:last-child) {
@@ -767,6 +684,10 @@ hr {
     color: #e6e6e6;
     font-size: 15px;
     padding: 0;
+}
+
+.navbar .navbar-nav .nav-current {
+    font-weight: bolder;
 }
 
 .navbar .navbar-nav .nav-item:not(:last-child) .nav-link {
