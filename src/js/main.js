@@ -25,9 +25,6 @@
     $(function () {
         /*----------- Globals -----------*/
 
-        /* Lity setup */
-        $(document).on('click', '[data-lightbox]', lity.options('template', '<div class="lity" role="dialog" aria-label="Dialog Window (Press escape to close)" tabindex="-1"><div class="lity-wrap" data-lity-close role="document"><div class="lity-loader" aria-hidden="true">Loading...</div><div class="lity-container"><div class="lity-content"></div><div class="lity-close" data-lity-close aria-label="Close (Press escape to close)"><span class="btn-line"></span></div></div></div></div>'));
-
         /* Function to check if element exists */
         function ifExists(el, f) {
             if ($(el).length) {
@@ -128,47 +125,6 @@
         window.addEventListener('resize', appHeight);
         appHeight();
 
-        /*----------- Navbar -----------*/
-
-        /* Lightboxes setup */
-        $('.navbar .navbar-nav .nav-link[href^="#"]').each(function () {
-            $(this).animatedModal({
-                animatedIn: 'fadeIn',
-                animatedOut: 'fadeOut',
-                animationDuration: '0s',
-                beforeOpen: function () {
-                    $('#overlay-effect').addClass('animate-up').removeClass('animate-down');
-                    $('#' + this.modalTarget).css({
-                        'animationDelay': '.5s',
-                        'animationFillMode': 'both'
-                    });
-                },
-                afterOpen: function () {
-                    $('#' + this.modalTarget).css({
-                        'animationFillMode': 'none'
-                    });
-                },
-                beforeClose: function () {
-                    $('#overlay-effect').addClass('animate-down').removeClass('animate-up');
-                    $('#' + this.modalTarget).css({
-                        'animationDelay': '.5s',
-                        'animationFillMode': 'both'
-                    });
-                },
-                afterClose: function () {
-                    $('#' + this.modalTarget).css({
-                        'animationFillMode': 'none'
-                    });
-                }
-            });
-        });
-
-        $('.lightbox-wrapper').each(function () {
-            if (!$('.navbar .navbar-nav .nav-link[href^="#' + this.id + '"]').length) {
-                $(this).hide();
-            }
-        });
-
         /* Hides the the mobile navbar dropdown when the user clicks outside of it */
         $(document).on('mouseup', function (event) {
             if ($('.navbar #navbarSupportedContent').hasClass('show')) {
@@ -253,35 +209,7 @@
                 $oldWord.removeClass('is-visible').addClass('is-hidden');
                 $newWord.removeClass('is-hidden').addClass('is-visible');
             }
-        }())
-
-        /*----------  About: Testimonials  ----------*/
-
-        ifExists('#about .testimonials-section', function () {
-            var testimonials = tns({
-                container: '#about .testimonials-section .my-slider',
-                items: 2,
-                gutter: 30,
-                "responsive": {
-                    "0": {
-                        "items": 1,
-                        "gutter": 0
-                    },
-                    "768": {
-                        "items": 2,
-                        "gutter": 30
-                    }
-                },
-                preventScrollOnTouch: 'auto',
-                slideBy: "page",
-                mouseDrag: true,
-                swipeAngle: false,
-                speed: 400,
-                controls: false,
-                autoHeight: true,
-                navPosition: 'bottom'
-            });
-        });
+        }());
 
         /*----------  Resume: Skills  ----------*/
 
