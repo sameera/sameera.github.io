@@ -17,6 +17,19 @@ const { page, title } = Astro.props;
 
         <slot />
 
-        <ScriptsBlock />
+        <ScriptsBlock>
+            <script>
+                document.addEventListener("scroll", function () {
+                    const navbar = document.querySelector(".navbar");
+                    if (!navbar) return;
+
+                    if (window.scrollY > 0) {
+                        navbar.classList.add("scrolled");
+                    } else {
+                        navbar.classList.remove("scrolled");
+                    }
+                });
+            </script>
+        </ScriptsBlock>
     </body>
 </html>
