@@ -1,8 +1,23 @@
 ---
+import HeadBlock from "../components/HeadBlock.astro";
 import Home from "../components/Home.astro";
-import MainLayout from "../layouts/MainLayout.astro";
+import NavBar from "../components/NavBar.astro";
+import Preloader from "../components/Preloader.astro";
+import ScriptsBlock from "../components/ScriptsBlock.astro";
 ---
 
-<MainLayout>
-    <Home />
-</MainLayout>
+<!doctype html>
+<html lang="en">
+    <HeadBlock />
+
+    <body class="theme-dark">
+        <Preloader />
+        <NavBar />
+
+        <Home />
+
+        <ScriptsBlock>
+            <script is:inline src="/js/lity.min.js"></script>
+        </ScriptsBlock>
+    </body>
+</html>

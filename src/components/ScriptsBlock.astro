@@ -1,0 +1,26 @@
+<!-- Scripts-->
+<script is:inline src="/js/jquery.min.js"></script>
+<script is:inline src="/js/bootstrap.bundle.min.js"></script>
+<script is:inline src="/js/imagesloaded.pkgd.min.js"></script>
+<slot />
+
+<script src="../js/main.js"></script>
+<!-- Custom JS (Add your custom JS scripts to this file)-->
+<script src="../js/custom.js"></script>
+
+<slot name="custom" />
+
+<!-- Google tag (gtag.js) -->
+<script
+    is:inline
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-B6X5CBC6XX"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-B6X5CBC6XX");
+</script>

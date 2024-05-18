@@ -255,13 +255,6 @@
             }
         }())
 
-        /* Home variants manager */
-
-        // If Video variant
-        if ($('.home-area').hasClass('video-variant')) {
-            $('#homeVideo').YTPlayer();
-        }
-
         /*----------  About: Testimonials  ----------*/
 
         ifExists('#about .testimonials-section', function () {
