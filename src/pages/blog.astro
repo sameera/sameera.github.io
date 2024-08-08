@@ -1,0 +1,51 @@
+---
+import BlogPost from "../components/BlogPost.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const rawPosts = await Astro.glob("../posts/*.md");
+const sortedPosts = rawPosts.sort((a, b) => {
+    return Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate);
+});
+---
+
+<BaseLayout>
+    <div class="lightbox-wrapper" id="blog" data-simplebar>
+        <div class="container">
+          <div class="lightbox-close">
+            <div class="close-btn" data-modal-close="">
+              <span class="btn-line"></span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="lightbox-content">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="section-heading page-heading">
+                      <p class="section-description">
+                        Check out my latest articles and posts
+                      </p>
+                      <h2 class="section-title">My Blog</h2>
+                      <div class="animated-bar"></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Blog section-->
+                <div class="blog-section single-section">
+                  <div class="row justify-content-center">
+                    {
+                        sortedPosts.map(post => (
+                            <BlogPost
+                                key={post.file}
+                                frontmatter={post.frontmatter}
+                            ><post.Content /></BlogPost>
+                        ))
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</BaseLayout>

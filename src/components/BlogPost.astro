@@ -1,0 +1,32 @@
+---
+const { frontmatter } = Astro.props;
+
+const formatDate = (dateString: string) => {
+  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'short', day: '2-digit' };
+  return new Date(dateString).toLocaleDateString(undefined, options);
+};
+
+const pubDate = formatDate(frontmatter.pubDate);
+---
+
+<!-- Single post-->
+ <div class="col-12 col-sm-8 col-lg-4">
+    <div class="card single-post">
+      <a class="post-img" href={frontmatter.url} target="_blank"
+        ><img
+          class="card-img-top"
+          src={'img/posts/' + (frontmatter.image || 'post-1.jpg')}
+
+          alt={frontmatter.title}
+        /><span class="content-date">{pubDate}</span></a>
+      <div class="card-body post-content">
+        <a href={frontmatter.url} target="_blank">
+          <h5 class="card-title content-title">{frontmatter.title}</h5>
+        </a>
+        <p class="card-text content-description">
+            <slot />
+        </p>
+      </div>
+    </div>
+</div>
+
