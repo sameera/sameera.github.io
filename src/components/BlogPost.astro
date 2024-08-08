@@ -15,7 +15,7 @@ const pubDate = formatDate(frontmatter.pubDate);
       <a class="post-img" href={frontmatter.url} target="_blank"
         ><img
           class="card-img-top"
-          src={'img/posts/' + (frontmatter.image || 'post-1.jpg')}
+          src={'/img/posts/' + (frontmatter.image || 'post-1.jpg')}
 
           alt={frontmatter.title}
         /><span class="content-date">{pubDate}</span></a>
